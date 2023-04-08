@@ -1,42 +1,41 @@
 filemenu = Menu("File");
-newfile = MenuItem("New Text File");
-newfile.setImage(images("menu/newfile.png"));
+newfile = MenuItem("New File");
+// newfile.setImage(images("menu/newfile.png"));
+
+
 
 newwindow = MenuItem("New Window");
-sep1 = MenuItem()
-sep1.setSeparator(true);
+sep1 = MenuItem('-')
 
 openfile = MenuItem("Open File");
 openfile.setImage(images("menu/openfolder.png"));
 
 openfolder = MenuItem("Open Folder");
 openrecent = MenuItem("Open Recent");
-sep2 = MenuItem();
-sep2.setSeparator(true);
+sep2 = MenuItem('-');
 
 save = MenuItem("Save");
 saveas = MenuItem("Save As");
-sep3 = MenuItem();
-sep3.setSeparator(true);
+sep3 = MenuItem('-');
 
 share = MenuItem("Share");
-sep4 = MenuItem();
-sep4.setSeparator(true);
+sep4 = MenuItem('-');
 
 autosave = MenuItem("Auto Save");
-preference = MenuItem("Preference");
+preferences = Menu("Preferences");
 
 settings = MenuItem("Settings");
-theme = MenuItem("Theme");
+themes = Menu("Theme");
+light = MenuItem("Light");
+dark = MenuItem("Dark");
+themes.addMenuItems(light, dark)
 
-// preference.addSubmenus(settings, theme)
+preferences.addMenuItems(settings, themes)
 
-sep3 = MenuItem();
-sep3.setSeparator(true);
+sep3 = MenuItem('-');
 exit = MenuItem("Exit");
 
-
-filemenu.addItems(
+filemenu.addMenuItems(
   newfile,
   newwindow,
   sep1,
@@ -50,5 +49,5 @@ filemenu.addItems(
   share,
   sep4,
   autosave,
-  preference,
+  preferences,
   exit);

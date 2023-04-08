@@ -1,5 +1,3 @@
-app.execute(scripts('file.js'))
-
 window = Window("Menus and toolbar");
 window.setIcon(images("javascript.png"));
 window.setSize(400, 300);
@@ -25,16 +23,14 @@ window.addToolbar(toolbar);
 
 menu = Menubar();
 
+// The menu to beused in the below file.
+app.execute(scripts('file.js'))
+
 editMenu = Menu("Edit");
 viewMenu = Menu("View");
 helpMenu = Menu("Help");
 
-a = MenuItem("File");
-b = MenuItem();
-b.setSeparator(true);
-c = MenuItem("Edit");
-
-// menu.addMenuItem(filemenu)//, editMenu, viewMenu, helpMenu);
+menu.addMenuItem(filemenu)//, editMenu, viewMenu, helpMenu);
 // menu.addItems(a, b, c);
 window.setMenubar(menu);
 
