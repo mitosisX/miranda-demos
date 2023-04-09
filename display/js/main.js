@@ -13,18 +13,17 @@ tray = SysTray();
 tray.setImage(images("heart.png"));
 tray.setVisibility(true);
 
+menubar = Menubar()
 menu = Menu();
 compose = MenuItem("Compose");
 compose.setImage(images("add.png"));
-
-// window.setMenu(menu);
 
 open = MenuItem("Open");
 open.setImage(images("open.png"));
 
 exit = MenuItem("Exit");
 exit.setImage(images("exit.png"));
-menu.addItems(compose, open, exit);
+menu.addMenuItems(compose, open, exit);
 tray.setMenu(menu);
 
 malawi = ToolbarButton();
@@ -43,6 +42,7 @@ b.onClick(function (self) {
 b.setCheckable(true);
 toolbar.addAction(b);
 
+// window.setMenubar(menu);
 window.addToolbar(toolbar);
 
 //menu = Menu(window);

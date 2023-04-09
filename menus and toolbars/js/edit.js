@@ -1,54 +1,50 @@
-window = Window("Menus and toolbar");
-window.setIcon(images("javascript.png"));
-window.setSize(400, 300);
+editmenu = Menu("Edit");
 
-toolbar = Toolbar();
+undo = MenuItem("Undo");
+undo.setImage(images("undo.png"));
+redo = MenuItem("Redo");
+redo.setImage(images("redo.png"));
+sep1 = MenuItem('-')
 
-malawi = ToolbarButton();
-malawi.setTooltip("Develoepd from Malawi");
-malawi.setImage(images("malawi.png"));
-toolbar.addAction(malawi);
+cut = MenuItem("Cut");
+cut.setImage(images("cut.png"));
+copy = MenuItem("Copy");
+copy.setImage(images("copy.png"));
+openfolder.setImage(images("menu/openfolder.png"));
+paste = MenuItem("Paste");
+paste.setImage(images("paste.png"));
+sep2 = MenuItem('-');
 
-toolbar.addSeparator();
+find = MenuItem("Find");
+find.setImage(images("find.png"));
+replace = MenuItem("Replace");
+sep3 = MenuItem('-');
 
-b = ToolbarButton();
-b.setTooltip("hey");
-b.setImage(images("icons8_send_50px.png"));
-b.onClick(function (self) {
-  self.setImage(images("icons8_curriculum_50px.png"));
-});
-b.setCheckable(true);
-toolbar.addAction(b);
-window.addToolbar(toolbar);
+findfiles = MenuItem("Find in Files");
+replacefiles = MenuItem("Replace in Files");
+sep4 = MenuItem('-');
 
-menu = Menubar();
+comment = Menu("Comment");
 
-fileMenu = Menu("File");
-newFile = MenuItem("New File");
-newFile.setImage(images("menu/newfile.png"));
+togglecomment = MenuItem("Toggle Comment");
+toggleblockcomment = MenuItem("Toggle Block Comment");
+comment.addMenuItems(togglecomment, toggleblockcomment)
 
-openFile = MenuItem("Open File");
-openFile.setImage(images("menu/openfolder.png"));
-
-sep = MenuItem();
-sep.setSeparator(true);
-
+sep3 = MenuItem('-');
 exit = MenuItem("Exit");
-exit.setImage(images("menu/exit.png"));
 
-fileMenu.addItems(newFile, sep, openFile, exit);
-
-editMenu = Menu("Edit");
-viewMenu = Menu("View");
-helpMenu = Menu("Help");
-
-a = MenuItem("File");
-b = MenuItem();
-b.setSeparator(true);
-c = MenuItem("Edit");
-
-menu.addMenuItems(fileMenu, editMenu, viewMenu, helpMenu);
-// menu.addItems(a, b, c);
-window.setMenubar(menu);
-
-window.show();
+editmenu.addMenuItems(
+  undo,
+  redo,
+  sep1,
+  cut,
+  comment,
+  paste,
+  sep2,
+  find,
+  replace,
+  sep3,
+  findfiles,
+  replacefiles,
+  sep4,
+  comment);

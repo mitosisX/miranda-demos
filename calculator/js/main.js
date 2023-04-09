@@ -1,4 +1,4 @@
-window = Window();
+window = Window("Calculator - Miranda");
 window.setIcon(images("calc.png"));
 window.setSize(280, 80);
 
