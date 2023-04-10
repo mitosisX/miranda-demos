@@ -2,9 +2,8 @@ window = Window();
 window.setIcon(images("javascript.png"));
 window.setSize(400, 100);
 
-not = Notification();
-not.setMessage('Hello', 'This is some test message',
-images('furniture.png'), 1000)
+not = Notification(images('furniture.png'));
+not.setMessage('MiranaJS', 'Welcome to MirandaJS framework!', 'information', 1000)
 not.show()
 
 toolbar = Toolbar();
@@ -59,11 +58,10 @@ button = Button();
 button.setText("Click me");
 button.setToolTip("I am a tooltip");
 button.onClick(function (x) {
-  app.setClipboardText("Hello, from Clipboard!!");
+  app.setClipboardText("Clipboard text!");
   // app.qPopup(window, 'title', 'message', ['yes', 'apply', 'discard', 'retry'])
   // alert(window, "Alert title", app.getClipboardText());
-  // return;
-  alert(window, "Title here", "Content here", "question", [
+  alert(window, "Title here", "These buttons are super cool!", "question", [
     "ok",
     "save",
     "close",
