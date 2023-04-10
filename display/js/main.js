@@ -3,9 +3,9 @@ window.setIcon(images("javascript.png"));
 window.setSize(400, 100);
 
 not = Notification();
-// not.setMessage('Hello', 'This is some test message',
-// images('furniture.png'), 1000)
-// not.show()
+not.setMessage('Hello', 'This is some test message',
+images('furniture.png'), 1000)
+not.show()
 
 toolbar = Toolbar();
 
@@ -142,7 +142,7 @@ lay1.addChildren(combo1, spin1);
 lay2 = HLayout();
 
 combo2 = ComboBox();
-combo2.addItems(lunch_list);
+combo2.addImageItems([[images('heart.png'), 'heart'], [images('malawi.png'), 'malawi']]);
 
 spin2 = Spinner();
 spin2.setPrefix("$");
